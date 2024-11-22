@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9e1e1; /* Soft pink background */
+            color: #333; /* Black text */
+            font-family: Arial, sans-serif;
+        }
+        .resume {
+            text-align: center;
+            background-color: #fff; /* White box background */
+            padding: 18px;
+            border-radius: 50px;
+            margin: 40px;
+        }
+        .title {
+            font-size: 45px;
+            font-weight: bold;
+            font-family: 'Ovo', sans-serif; /* Apply the Ovo font to .title */
+            color: #333; /* Black title */
+        }
+        
+        /* Button styling with soft pink and black text */
+        .button {
+            height: 50px;
+            width: 200px;
+            background-color: transparent;
+            cursor: pointer;
+            border: 2px solid #f4b6b6; /* Soft pink border */
+            color: #333; /* Black text */
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            display: flex; /* Flexbox to center text */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            margin: 20px 10px;
+            font-weight: bold;
+			text-decoration: none;
+        }
+
+        .btn-txt {
+            z-index: 1;
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+        .type1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s ease-in-out;
+            background-color: #f4b6b6; /* Soft pink background on hover */
+            border-radius: 30px;
+            visibility: hidden;
+            height: 10px;
+            width: 10px;
+            z-index: -1;
+        }
+
+        .button:hover {
+            background-color: #f4b6b6; /* Soft pink hover effect */
+            color: #fff; /* White text on hover */
+            border: 2px solid #f9e1e1; /* Black border on hover */
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3); /* Subtle black shadow */
+        }
+
+        .type1:hover::after {
+            visibility: visible;
+            transform: scale(100) translateX(2px);
+        }
+
+        .line {
+            width: 100%; /* Full width for the line */
+            border-bottom: 1px solid #333; /* Black line */
+            margin: 1px auto;
+        }
+        .intro {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333; /* Black intro text */
+        }
+        .description {
+            font-size: 12px; /* Smaller font size for description */
+            margin: 50px;
+            text-align: left;
+			margin-right: 125px;
+			margin-left: 25px
+        }
+        .image {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .description-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .description-box .description h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-family: 'Ovo', serif;
+            color: #333; /* Black heading */
+        }
+        .description-box .description p {
+            font-size: 14px;
+            color: #333; /* Black text */
+        }
+
+        /* Ribbon outside the description box */
+        .ribbon-wrapper {
+            position: absolute;
+            left: -30px;
+            top: 595px;
+        }
+
+        /* Ribbon Style */
+        .ribbon {
+            width: 150px;
+            height: 150px;
+            background-image: url('ribbonsayang.png'); /* Set the image URL */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+		
+		/* Additional styles for link button */
+		.button-container {
+         display: flex; /* Flexbox layout */
+         justify-content: center; /* Center buttons horizontally */
+         gap: 20px; /* Space between buttons */
+         margin-top: 20px;
+        }
+
+        .button-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 200px;
+            background-color: transparent;
+            cursor: pointer;
+            border: 2px solid #f4b6b6; /* Soft pink border */
+            color: #333; /* Black text */
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            font-weight: bold;
+            text-decoration: none;
+			margin-left: -10px;
+			text-decoration: none;
+        }
+
+        .button-link:hover {
+            background-color: #f4b6b6; /* Soft pink hover effect */
+            color: #fff; /* White text on hover */
+            border: 2px solid #f9e1e1;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="title">My Personal Resume</div>
+        
+        <div class="button-container">
+        <a href="file:///C:/Users/user/OneDrive/Documents/sayang/home.html" class="button type1">
+            <span class="btn-txt">Home</span>
+        </a>
+        <a href="file:///C:/Users/user/OneDrive/Documents/sayang/education.html" class="button type1">
+            <span class="btn-txt">Education</span>
+        </a>
+        <a href="file:///C:/Users/user/OneDrive/Documents/sayang/involvement.html" class="button type1">
+            <span class="btn-txt">Involvement</span>
+        </a>
+        <a href="file:///C:/Users/user/OneDrive/Documents/sayang/skills.html" class="button type1">
+            <span class="btn-txt">Skills</span>
+        </a>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- Description Box Section -->
+        <div class="description-box">
+            <!-- New Ribbon Wrapper Outside the Description Box -->
+            <div class="ribbon-wrapper">
+                <div class="ribbon"></div>
+            </div>
+
+            <div class="description">
+                <h2 style="font-family: 'Ovo', serif;">Hello, Welcome To My Page!</h2>
+                <p>My name is Irdina Safiya. This is my Personal Resume HomePage. Take a look around to know more about my background and involvement.</p>
+                <a href="file:///C:/Users/user/OneDrive/Documents/sayang/aboutMe.html" class="button type1 button-link">
+                    <span class="btn-txt">About Me</span>
+                </a>
+            </div>
+
+            <img src="" alt="Description Image" class="image">
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
