@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Tree</title>
+  <style>
+    /* General page styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fce4ec; /* Soft pink background */
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #ff1493;
+      margin-bottom: 20px;
+    }
+
+    /* Family tree container */
+    .family-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Row styling */
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* Card styling */
+    .card {
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .card.family {
+      width: 700px;
+      height: 300px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-front {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background: linear-gradient(-45deg, #f89b29, #ff0f7b);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card-back h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .card-back p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Line connector */
+    .line {
+      width: 2px;
+      background-color: #ff1493;
+      height: 40px;
+    }
+
+    /* Pet and video section */
+    .pet-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pet-section video {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Family Tree</h1>
+  <div class="family-tree">
+    <!-- Family Picture -->
+    <div class="card family">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="family.jpg" alt="Family Picture">
+        </div>
+        <div class="card-back">
+          <h3>The Family</h3>
+          <p>A happy family united by love and laughter.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parents Row -->
+    <div class="row">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="father.jpg" alt="Father">
+          </div>
+          <div class="card-back">
+            <h3>Father</h3>
+            <p>Head of the family and a pillar of strength.</p>
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="mother.jpg" alt="Mother">
+          </div>
+          <div class="card-back">
+            <h3>Mother</h3>
+            <p>The heart of the family, spreading warmth and care.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Children Row -->
+    <div class="row">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="child1.jpg" alt="Child 1">
+          </div>
+          <div class="card-back">
+            <h3>First Child</h3>
+            <p>The eldest, always leading by example.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="child2.jpg" alt="Child 2">
+          </div>
+          <div class="card-back">
+            <h3>Second Child</h3>
+            <p>Full of creativity and charm.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="child3.jpg" alt="Child 3">
+          </div>
+          <div class="card-back">
+            <h3>Youngest Child</h3>
+            <p>The playful bundle of joy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pet Section -->
+    <div class="pet-section">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="pet.jpg" alt="Pet">
+          </div>
+          <div class="card-back">
+            <h3>Pet</h3>
+            <p>The family’s furry friend.</p>
+          </div>
+        </div>
+      </div>
+      <video controls>
+        <source src="cat-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</body>
+</html>

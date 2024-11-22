@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Involvement Cards</title>
+  <style>
+    /* General Body Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9eaea; /* Soft pink background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* White Box Container */
+    .container {
+      background-color: white;
+      width: 90%;
+      max-width: 1000px;
+      padding: 20px 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Title Styling */
+    .container h1 {
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Line Styling */
+    .line {
+      width: 80%;
+      height: 2px;
+      background-color: #ccc;
+      margin: 0 auto 30px;
+    }
+
+    /* Card Section */
+    .card-wrapper {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping for responsiveness */
+      justify-content: center;
+      gap: 20px; /* Space between cards */
+    }
+
+    /* Card Container */
+    .myCard {
+      background-color: transparent;
+      width: 300px; /* Card width */
+      height: 400px; /* Card height */
+      perspective: 1000px;
+    }
+
+    /* Card Inner Container */
+    .innerCard {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .myCard:hover .innerCard {
+      transform: rotateY(180deg); /* Rotate on hover */
+    }
+
+    /* Front and Back Side Styling */
+    .frontSide,
+    .backSide {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Centered content */
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      color: white;
+      box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5); /* Subtle shadow */
+      font-weight: 700;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Front Side Gradient */
+    .frontSide {
+      background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+    }
+
+    /* Back Side Gradient */
+    .backSide {
+      background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+      transform: rotateY(180deg);
+    }
+
+    /* Glow Effect */
+    .frontSide::before,
+    .backSide::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      z-index: -1;
+      border-radius: 1em;
+      filter: blur(20px);
+      animation: animate 5s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0.3;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+
+    /* Card Title Styling */
+    .title {
+      font-size: 1.8em; /* Larger font size */
+      font-weight: 900;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Card Text Styling */
+    p {
+      font-size: 1em;
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Involvement</h1>
+    <div class="line"></div>
+    <div class="card-wrapper">
+      <!-- Organization 1 -->
+      <div class="myCard">
+        <div class="innerCard">
+          <div class="frontSide">
+            <p class="title">Your First Organization</p>
+            <p>January 2020 - June 2020</p>
+          </div>
+          <div class="backSide">
+            <p class="title">Volunteer Coordinator</p>
+            <p>Led a team of volunteers to organize community events and ensure smooth operations during events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organization 2 -->
+      <div class="myCard">
+        <div class="innerCard">
+          <div class="frontSide">
+            <p class="title">Your Second Organization</p>
+            <p>July 2020 - December 2020</p>
+          </div>
+          <div class="backSide">
+            <p class="title">Project Manager</p>
+            <p>Managed a project team to deliver results on time, meeting all objectives and milestones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

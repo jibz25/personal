@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education</title>
+    <style>
+        /* Background color */
+        body {
+            background-color: #fddde6; /* Soft pink */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            position: relative; /* Enables positioning for the button */
+        }
+
+        /* Button animation and styling */
+        .button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #e91e63, #f06292);
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #f06292, #e91e63);
+        }
+
+        /* Container for education information */
+        .education-container {
+            background-color: #ffffff; /* White box */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 182, 193, 0.5); /* Soft pink shadow */
+            max-width: 1000px; /* Increased width */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Title and line */
+        h1 {
+            color: #333;
+            font-size: 26px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .title-line {
+            width: 60%;
+            height: 2px;
+            background-color: #ddd;
+            margin: 10px auto;
+        }
+
+        /* Content Section */
+        .content {
+            display: flex;
+            flex-direction: column; /* Stack cards vertically */
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            gap: 20px; /* Space between cards */
+        }
+
+        /* Card styles */
+        .card {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1000px; /* Increased width */
+            height: 200px; /* Keeping the height same */
+            transition: all .3s;
+            position: relative;
+            border-radius: .5rem 2rem;
+            box-shadow: 0px 15px 20px -5px rgba(255, 182, 193, 0.5); /* Soft pink shadow */
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .img-container {
+            flex-shrink: 0;
+            width: 250px; /* Increased width for the image */
+            height: 200px;
+            overflow: hidden;
+            border-radius: .5rem 0 0 .5rem;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .description-container {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 15px;
+            background-color: #fff;
+        }
+
+        .description {
+            font-size: 1.4em; /* Increased font size */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info {
+            font-size: 1em; /* Slightly larger text */
+            color: #555;
+        }
+
+        .info .year {
+            font-weight: bold;
+            color: #e91e63; /* Soft pink color for the year */
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button -->
+    <a href="file:///C:/Users/user/OneDrive/Documents/sayang/personalResume.html" class="button">Back</a>
+
+    <div class="education-container">
+        <!-- Title and Line -->
+        <h1>My Education</h1>
+        <div class="title-line"></div>
+
+        <!-- Content Section with Stacked Cards -->
+        <div class="content">
+            <!-- University Card -->
+            <div class="card">
+                <div class="img-container">
+                    <div class="img" style="background-image: url('university-logo.png');">
+                        <!-- Replace 'university-logo.png' with the path to your university logo -->
+                    </div>
+                </div>
+                <div class="description-container">
+                    <div class="description">[Your University Name]</div>
+                    <div class="info">
+                        <span class="year">2021 - Present</span><br>
+                        <span>Bachelor of Computer Science</span><br>
+                        <span>Major in Software Engineering</span><br>
+                        <span>Minor in Data Science</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High School Card -->
+            <div class="card">
+                <div class="img-container">
+                    <div class="img" style="background-image: url('highschool-logo.png');">
+                        <!-- Replace 'highschool-logo.png' with the path to your high school logo -->
+                    </div>
+                </div>
+                <div class="description-container">
+                    <div class="description">SMK Khir Johari</div>
+                    <div class="info">
+                        <span class="year">2015 - 2020</span><br>
+                        <span>Multimedia Studies</span><br>
+                        <span>Specialized in Graphic Design and Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
